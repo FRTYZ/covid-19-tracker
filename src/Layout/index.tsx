@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Container } from '@mui/material';
+
 // Layout Components
 import Navbar from './Navbar';
 
@@ -11,7 +13,7 @@ const Layout = (props: LayoutProps) => {
 return (
   <React.Fragment>
       <Navbar />
-      <div>{props.children}</div>
+      <Container>{props.children}</Container>
   </React.Fragment>
 )
 }
