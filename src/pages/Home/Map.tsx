@@ -43,7 +43,6 @@ function Map() {
           <Box>
               <WorldMap
                 onClickFunction={(countryName) => {
-                  console.log(countryName)
                   setSelectCountry(countryName.countryName)
                 }}
                 color="red"

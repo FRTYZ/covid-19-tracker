@@ -10,8 +10,6 @@ export async function Request(parameters: ParametersProps): Promise <ResultProps
 
     const appEndpoint = endPoint + url;
 
-    console.log(appEndpoint)
-
     const options: Options = {
         method: method,
         headers: {
