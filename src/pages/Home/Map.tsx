@@ -13,14 +13,19 @@ import { Request } from '../../helpers/Request';
 // Components
 import { SnackbarAlert } from '../../components/SnackbarAlert';
 
+// Redux
+import { setCountryData, useAppDispatch } from '../../redux/store';
+
 // Npm packages
 import { WorldMap } from "react-svg-worldmap"
 
 // interfaces
 import { snackbarOptionsProps } from '../../components/component';
-import { ResponseProp } from '../../helpers/interface';
+import { ResponseProp } from '../../helpers/request-interface';
 
 function Map() {
+  // Redux
+  const dispatch = useAppDispatch();
 
   // useState
   const [snackbarData, setSnackbarData] = useState<snackbarOptionsProps>({});
@@ -45,6 +50,7 @@ function Map() {
 
       if((result.response).length > 0){
         setStatistics(result.response)
+        dispatch(setCountryData(result.response))
       }else{
         setSnackbarData({
           type: 'error',

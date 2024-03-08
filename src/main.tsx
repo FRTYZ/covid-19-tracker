@@ -11,15 +11,19 @@ import './index.css'
 
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from 'styled-components'
+import { Provider } from 'react-redux';
 
 import theme from './theme.tsx';
+import store from './redux/store.ts';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.Fragment>
      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
     </ThemeProvider>
   </React.Fragment>,
 )
