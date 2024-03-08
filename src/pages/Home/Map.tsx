@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import MapChart from '../../components/MapChart'
 
 import WorldMap from "react-svg-worldmap";
 
@@ -17,7 +16,9 @@ function Map() {
 
   // useEffect
   useEffect(() => {
-      getCountriesValues()
+    if(selectedCountry !== ''){
+        getCountriesValues()
+    }
   }, [selectedCountry])
 
 
