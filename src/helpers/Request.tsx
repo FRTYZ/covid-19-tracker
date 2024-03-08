@@ -1,4 +1,4 @@
-import { ParametersProps, Options, ResultProps } from "./interface";
+import { ParametersProps, Options, ResultProps } from "./request-interface";
 
 
 export async function Request(parameters: ParametersProps): Promise <ResultProps> {
