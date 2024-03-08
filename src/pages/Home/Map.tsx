@@ -7,30 +7,27 @@ import
 // Material UI elements
 import { Grid, Box, Typography } from '@mui/material';
 
-// helpers
-import { Request } from '../../helpers/Request';
-
 // Components
 import { SnackbarAlert } from '../../components/SnackbarAlert';
 
 // Redux
-import { setCountryData, useAppDispatch } from '../../redux/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCovidData } from '../../redux/actions';
 
 // Npm packages
 import { WorldMap } from "react-svg-worldmap"
 
 // interfaces
 import { snackbarOptionsProps } from '../../components/component';
-import { ResponseProp } from '../../helpers/request-interface';
 
 function Map() {
   // Redux
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
+  const { data: covidData, loading, error } = useSelector((state: any) => state.covidData);
 
   // useState
   const [snackbarData, setSnackbarData] = useState<snackbarOptionsProps>({});
   const [selectedCountry, setSelectCountry] = useState<string>("");
-  const [statistics, setStatistics] = useState<ResponseProp[]>([])
 
   // useEffect
   useEffect(() => {
@@ -39,19 +36,13 @@ function Map() {
     }
   }, [selectedCountry])
 
-
   // Functions
   const getCountriesValues = async() => {
       const country = selectedCountry.toLocaleLowerCase().replace(' ', '-')
-      const result = await Request({
-          method: 'GET',
-          url: '/statistics?country=' + country 
-      })
 
-      if((result.response).length > 0){
-        setStatistics(result.response)
-        dispatch(setCountryData(result.response))
-      }else{
+      dispatch(fetchCovidData(country))
+
+      if(Object.keys(covidData?.errors).length > 0  || Object.keys(covidData?.response).length == 0){
         setSnackbarData({
           type: 'error',
           message: selectedCountry + ' verisi alınamadı. farklı ülke seçebilirsiniz.'
