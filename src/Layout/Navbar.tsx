@@ -11,9 +11,10 @@ import {
     MenuItem,
     Typography,
     useTheme,
-    Link
   } from "@mui/material"
 
+// Router
+import { Link } from 'react-router-dom';
 
 // Material UI styles
 import { navbarStyles } from '../styles';
@@ -22,6 +23,7 @@ import { navbarStyles } from '../styles';
 import LogoImage from '../assets/logo.png'
 
 const Navbar = () => {
+
     // Material UI and react router
     const theme = useTheme();
 
@@ -29,7 +31,7 @@ const Navbar = () => {
 
     // logo section
     const LogoComponent = () => (
-        <Link href="/" style={{ textDecoration: 'none' }}>
+        <Link to="/" style={{ textDecoration: 'none' }}>
             <Box sx={navbarStyles.logoBox}>
                 <img src={LogoImage} width={'48'} height={'48'} />
                 <Typography 
