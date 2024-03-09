@@ -1,7 +1,7 @@
 // reducers.ts
 
 import { combineReducers } from 'redux';
-import { FETCH_COVID_DATA_SUCCESS, FETCH_COVID_DATA_FAILURE } from './actions';
+import { FETCH_COVID_DATA_SUCCESS, FETCH_COVID_DATA_FAILURE, RESET_STATE } from './actions';
 
 const initialDataState = {
   // Başlangıç veri durumu
@@ -25,6 +25,8 @@ const covidDataReducer = (state = initialDataState, action: any) => {
         loading: false,
         error: action.payload,
       };
+    case RESET_STATE:
+      return initialDataState; // State'i başlangıç durumuna sıfırla
     default:
       return state;
   }
