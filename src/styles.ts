@@ -24,7 +24,8 @@ export const navbarStyles: Record<string, SxProps<Theme> | undefined> = {
             md: 0,
             sm: '10px',
             xs: '10px'
-        }
+        },
+        cursor: 'pointer'
     },
     selectBox: {
         margin: {

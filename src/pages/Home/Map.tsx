@@ -48,16 +48,16 @@ function Map() {
 
       dispatch(fetchCovidData(country))
 
-      if(covidData?.response?.length == 0){
+      if((covidData?.response) && (covidData.response.length > 0) ){
+            navigate('/detail/'+ country)
+      }else{
           setSnackbarData({
             type: 'error',
             message: selectedCountry + ' verisi alınamadı. farklı ülke seçebilirsiniz.'
           })
-      }else{
-          navigate('/detail/'+ country)
       }
   }
-
+ 
   // Map default values
   const data = [
     { country: "tr", value: 85561976 },
@@ -76,6 +76,7 @@ function Map() {
         cursor: "pointer" 
       }
   }
+
 
   return (
     <React.Fragment>

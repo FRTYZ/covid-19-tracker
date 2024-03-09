@@ -154,12 +154,12 @@ const Detail = () => {
                             <Suspense fallback={<></>}>
                                 {Object.keys(values).length > 0 && (
                                     <CardSection 
-                                    title='Ülke'
-                                    value={values?.country}
-                                    status={values?.continent}
-                                    color='#ff6c00'
-                                    bottomText={updateTime}
-                                />
+                                        title='Ülke'
+                                        value={values?.country}
+                                        status={values?.continent}
+                                        color='#ff6c00'
+                                        bottomText={updateTime}
+                                    />
                                 )}
                             </Suspense>
                         </Box>
