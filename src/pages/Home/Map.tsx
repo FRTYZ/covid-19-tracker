@@ -83,11 +83,6 @@ function Map() {
       <Grid container>
         {/* Snackbar for alerts */}
         {Object.keys(snackbarData).length > 0 && <SnackbarAlert snackbarOptions={snackbarData} />}
-        <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-            <Box>
-                <Typography>Seçilen Ülke</Typography>
-            </Box>
-        </Grid>
          {/* Map section */}
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
           <Box>
