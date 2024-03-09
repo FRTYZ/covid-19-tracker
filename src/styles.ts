@@ -27,6 +27,11 @@ export const navbarStyles: Record<string, SxProps<Theme> | undefined> = {
         },
         cursor: 'pointer'
     },
+    logoText: {
+        marginTop: 1.6,
+        marginLeft: 1,
+        fontWeight: 600
+    },
     selectBox: {
         margin: {
             lg: 0,
