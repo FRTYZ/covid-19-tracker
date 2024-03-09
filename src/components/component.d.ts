@@ -11,5 +11,8 @@ export type snackBarProps = {
 }
 
 export type CardSectionProp = {
-    data: any[],
+    title?: string, 
+    value?: number,
+    status?: string,
+    color?: string
 }
