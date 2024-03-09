@@ -12,7 +12,7 @@ export type snackBarProps = {
 
 export type CardSectionProp = {
     title?: string, 
-    value?: number,
+    value?: number | string,
     status?: string,
     color?: string
 }

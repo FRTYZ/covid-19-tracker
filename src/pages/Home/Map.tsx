@@ -92,7 +92,7 @@ function Map() {
           <Box>
               <WorldMap
                 onClickFunction={(countryName) => {
-                  setSelectCountry(countryName.countryName)
+                  setSelectCountry(countryName?.countryName)
                 }}
                 styleFunction={stylingFunction}
                 color="white"
