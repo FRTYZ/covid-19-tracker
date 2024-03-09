@@ -5,7 +5,7 @@ import
 } from 'react'
 
 // Material UI elements
-import { Grid, Box, Typography } from '@mui/material';
+import { Grid, Box } from '@mui/material';
 
 // Components
 import { SnackbarAlert } from '../../components/SnackbarAlert';
@@ -14,14 +14,12 @@ import { SnackbarAlert } from '../../components/SnackbarAlert';
 import { useNavigate } from 'react-router-dom';
 
 // Redux
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchCovidData } from '../../redux/actions';
+import { useDispatch } from 'react-redux';
+import { resetState } from '../../redux/actions';
 
 // Npm packages
 import { WorldMap } from "react-svg-worldmap"
-
-// interfaces
-import { snackbarOptionsProps } from '../../components/component';
+import slugify from 'react-slugify';
 
 function Map() { 
   // Router
@@ -29,34 +27,20 @@ function Map() {
 
   // Redux
   const dispatch = useDispatch();
-  const { data: covidData, loading, error } = useSelector((state: any) => state.covidData);
 
   // useState
-  const [snackbarData, setSnackbarData] = useState<snackbarOptionsProps>({});
   const [selectedCountry, setSelectCountry] = useState<string>("");
 
   // useEffect
   useEffect(() => {
     if(selectedCountry !== ''){
-        getCountriesValues()
+        const country = slugify(selectedCountry)
+        navigate('/detail/'+ country)
+        dispatch(resetState())
     }
   }, [selectedCountry])
 
   // Functions
-  const getCountriesValues = async() => {
-      const country = selectedCountry.toLocaleLowerCase().replace(' ', '-')
-
-      dispatch(fetchCovidData(country))
-
-      if((covidData?.response) && (covidData.response.length > 0) ){
-            navigate('/detail/'+ country)
-      }else{
-          setSnackbarData({
-            type: 'error',
-            message: selectedCountry + ' verisi alınamadı. farklı ülke seçebilirsiniz.'
-          })
-      }
-  }
  
   // Map default values
   const data = [
@@ -81,8 +65,6 @@ function Map() {
   return (
     <React.Fragment>
       <Grid container>
-        {/* Snackbar for alerts */}
-        {Object.keys(snackbarData).length > 0 && <SnackbarAlert snackbarOptions={snackbarData} />}
          {/* Map section */}
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
           <Box>
