@@ -1,10 +1,12 @@
 import 
-    React,{
-    useEffect, 
-    useState,
-    lazy,
-    Suspense
-} from 'react'
+    React,
+    {
+        useEffect, 
+        useState,
+        lazy,
+        Suspense
+    } 
+from 'react'
 
 // Material UI elements
 import { Grid, Box, Typography } from '@mui/material';
@@ -108,7 +110,7 @@ const Detail = () => {
     },[values])
 
     
-    //--------- Chart Setting area --------------
+    //--------- Pie Chart Settings area --------------
 
     const colors = ["#b8c0c7", "#00C49F", "#FFBB28", "#FF8042"];
     const radian = Math.PI / 180;
@@ -145,6 +147,7 @@ const Detail = () => {
     return (
         <React.Fragment>
             <Box sx={{ marginBottom: 4 }}>
+                {/* Country info and last update section */}
                 <Grid container>
                     <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
                         <Box sx={{ marginTop: 4 }}>
@@ -163,8 +166,9 @@ const Detail = () => {
                     </Grid>
                 </Grid>
                 <Grid container>
+                    {/* Left cards (covid 19 values) */}
                     <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
-                        <Box sx={{ marginTop: 3 }}> 
+                        <Box sx={{ marginTop: 2.8 }}> 
                             <Grid container spacing={2}>
                                 <Grid item lg={6} md={6} sm={6} xs={6}>
                                     <Suspense fallback={<></>}>
@@ -235,8 +239,11 @@ const Detail = () => {
                             </Grid>
                         </Box>
                     </Grid>
+
+                    {/* Right Charts (pie chart, line chart) */}
                     <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
                         <Grid container>
+                            {/* Pie chart section */}
                             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
                                 <Box 
                                     sx={{ 
@@ -265,6 +272,7 @@ const Detail = () => {
                                 </Box>
                                 <Typography sx={{  textAlign: 'center', fontSize: '16px', fontWeight: 600 }}> Vefat eden / İyileşenler istatistik grafiği </Typography>
                             </Grid>
+                            {/* Line chart section */}
                             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
                                 <Box 
                                     sx={{ 
