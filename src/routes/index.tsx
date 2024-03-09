@@ -1,11 +1,14 @@
 import { lazy } from "react";
+import { Navigate } from "react-router-dom";
 
 // Pages
-export const Map = lazy(() => import('../pages/Home/Map'));
-export const Detail = lazy(() => import('../pages/Home/Detail'));
+
+import Map from "../pages/Home/Map";
+import Detail from "../pages/Home/Detail";
 
 const publicRoutes = [
-    { path: "/", exact: true, component: <Map /> },
+    { path: "/", component: <Map /> },
+    { path: "/", exact: true, component: <Navigate to="/" />},
     { path: "/detail/:country", component: <Detail /> },
 ]; 
 
