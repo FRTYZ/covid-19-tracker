@@ -14,14 +14,14 @@ export interface Options {
 }
 
 export interface ResponseProp {
-    cases?: {new: boolean, active: number, critical: boolean, recovered: number, '1M_pop': string, total: number}
-    continent?: string
-    country?: string
-    day?: string
-    deaths?: {new: boolean, '1M_pop': string, total: number}
-    population: number
-    tests: {'1M_pop': string, total: number}
-    time: string
+    cases?: {new: string, active: number, critical: boolean, recovered: number, '1M_pop': string, total: number},
+    continent?: string,
+    country?: string,
+    day?: string,
+    deaths?: {new: boolean, '1M_pop': string, total: number},
+    population?: number,
+    tests?: {'1M_pop': string, total: number},
+    time?: string
 }
 
 export interface ResultProps {

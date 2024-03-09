@@ -10,6 +10,9 @@ import { Grid, Box, Typography } from '@mui/material';
 // Components
 import { SnackbarAlert } from '../../components/SnackbarAlert';
 
+// Router
+import { useNavigate } from 'react-router-dom';
+
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCovidData } from '../../redux/actions';
@@ -20,7 +23,10 @@ import { WorldMap } from "react-svg-worldmap"
 // interfaces
 import { snackbarOptionsProps } from '../../components/component';
 
-function Map() {
+function Map() { 
+  // Router
+  const navigate = useNavigate();
+
   // Redux
   const dispatch = useDispatch();
   const { data: covidData, loading, error } = useSelector((state: any) => state.covidData);
@@ -42,11 +48,13 @@ function Map() {
 
       dispatch(fetchCovidData(country))
 
-      if(Object.keys(covidData?.errors).length > 0  || Object.keys(covidData?.response).length == 0){
-        setSnackbarData({
-          type: 'error',
-          message: selectedCountry + ' verisi alınamadı. farklı ülke seçebilirsiniz.'
-        })
+      if(covidData?.response?.length == 0){
+          setSnackbarData({
+            type: 'error',
+            message: selectedCountry + ' verisi alınamadı. farklı ülke seçebilirsiniz.'
+          })
+      }else{
+          navigate('/detail/'+ country)
       }
   }
 
