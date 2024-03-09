@@ -44,21 +44,43 @@ export const navbarStyles: Record<string, SxProps<Theme> | undefined> = {
 
 // components/CardSection
 export const cardSectionStyles: Record<string, SxProps<Theme> | undefined> = {
+    card: {
+        textAlign: 'center',
+        boxShadow: 'rgba(0, 0, 0, 0.1) 0px 1.5rem 3rem',
+        borderRadius: '25px',
+    },
     cardContentTitle: {
-        fontSize: '16px', 
-        fontWeight: 600, 
-        marginBottom: 1
+        fontSize: '20px',
+        fontWeight: 700,
+        lineHeight: '34px',
+        color: '#1A1053',
     },
-    cardContent: {
-        fontSize: '16px', 
-        marginBottom: 1
+    cardMiddleContent: {
+        fontSize: '35px',
+        fontWeight: 700,
+        lineHeight: '59px',
+        margin: '8px 0px 8px 0px'
     },
-    cardImageBox : {
-        display: 'inline-flex'
+    cardBottomContent: {
+        fontSize: '16px',
+        fontWeight: 700,
+        lineHeight: '28px',
     },
-    cardImage : {
-        width: 40, 
-        marginRight: '5px', 
-        border: '2px solid #7c4b00'
+    cardActions: {
+        textAlign: 'center', 
+        display: 'inline'
+    },
+    cardActionsBox: {
+        borderTop: '1px solid'
+    },
+    cardActionTitle: {
+        fontSize: '16px',
+        lineHeight: '28px',
+        marginTop: '10px'
+    },
+    cardActionText: {
+        fontSize: '16px',
+        fontWeight: 700,
+        lineHeight: '28px'
     }
 }

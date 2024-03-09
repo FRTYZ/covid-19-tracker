@@ -3,17 +3,16 @@ import React from 'react'
 // Material UI elements
 import { 
     Box,
-    Grid,
     Card,
     CardContent,
     CardActions,
     Typography,
-    Avatar,
     useTheme,
-    Chip
 } from '@mui/material';
 
 import { cardSectionStyles } from '../styles';
+
+import { CardLoader } from './Loaders';
 
 // İnterfaces
 import { CardSectionProp } from './component';
@@ -28,68 +27,46 @@ const CardSection: React.FC<CardSectionProp> = ({ title, value, status, color, b
                 ':hover': {
                     outline: '2px solid' + theme.palette.warning.main
                 },
-                textAlign: 'center',
-                boxShadow: 'rgba(0, 0, 0, 0.1) 0px 1.5rem 3rem',
-                borderRadius: '25px'
+                ...cardSectionStyles.card
             }}
         >
-            <CardContent>
-                <Typography sx={{
-                    fontSize: '20px',
-                    fontWeight: 700,
-                    lineHeight: '34px',
-                    color: '#1A1053',
-                }}>
-                       {title}
-                </Typography>
-                <Typography sx={{
-                    fontSize: '35px',
-                    fontWeight: 700,
-                    lineHeight: '59px',
-                    color: {color},
-                    margin: '8px 0px 8px 0px'
-                }}>
-                       {value == null ? 'Bulunamadı' : value}
-                </Typography>
-
-                {status == 'null' || status == undefined ? (
-                    <Typography sx={{ p: 1.7 }}>
-                        
+        {value !== undefined ? (
+            <>
+                <CardContent>
+                    <Typography sx={cardSectionStyles.cardContentTitle}>
+                        {title}
                     </Typography>
-                   
-               ): (
-                    <Typography sx={{
-                        fontSize: '16px',
-                        fontWeight: 700,
-                        lineHeight: '28px',
-                        color: {color},
-                    }}>
-                        {status}
+                    <Typography 
+                        sx={{
+                            color: {color},
+                            ...cardSectionStyles.cardMiddleContent
+                        }}
+                    >                    
+                        {value == null ? 'Bulunamadı' : value}
                     </Typography>
-               )}
-            </CardContent>
-            {bottomText !== undefined && (
-                <CardActions sx={{ textAlign: 'center', display: 'inline' }}>
-                    <Box sx={{
-                         borderTop: '1px solid'
-                    }}>
-                        <Typography
-                            sx={{
-                                fontSize: '16px',
-                                lineHeight: '28px',
-                                marginTop: '10px'
-                            }}
-                        >Güncellenme Tarihi</Typography>
-                        <Typography 
-                            sx={{
-                                fontSize: '16px',
-                                fontWeight: 700,
-                                lineHeight: '28px'
-                            }}
-                        >{bottomText}</Typography>
-                    </Box>
-                </CardActions>
-            )}
+                    <Typography 
+                        sx={
+                            status == 'null' || status == undefined ? 
+                            { p: 1.7 }
+                            :{
+                                color: {color},
+                                ...cardSectionStyles.cardBottomContent
+                            }}>
+                        {status == 'null' || status == undefined ? '' : status}
+                    </Typography>
+                </CardContent>
+                {bottomText !== undefined && bottomText !== '' && (
+                    <CardActions sx={cardSectionStyles.cardActions}>
+                        <Box sx={cardSectionStyles.cardActionsBox}>
+                            <Typography sx={cardSectionStyles.cardActionTitle}>Güncellenme Tarihi</Typography>
+                            <Typography sx={cardSectionStyles.cardActionText}>{bottomText}</Typography>
+                        </Box>
+                    </CardActions>
+                )}
+            </>
+        ): (
+            <CardLoader />
+        )}
         </Card>
     )
 
