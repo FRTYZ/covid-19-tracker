@@ -18,7 +18,7 @@ import { cardSectionStyles } from '../styles';
 // İnterfaces
 import { CardSectionProp } from './component';
 
-const CardSection: React.FC<CardSectionProp> = ({ title, value, status, color }) => {
+const CardSection: React.FC<CardSectionProp> = ({ title, value, status, color, bottomText }) => {
     // Material UI settings
     const theme = useTheme();
     return (
@@ -68,6 +68,27 @@ const CardSection: React.FC<CardSectionProp> = ({ title, value, status, color })
                     </Typography>
                )}
             </CardContent>
+            {bottomText !== undefined && (
+                <CardActions sx={{ textAlign: 'center', display: 'inline' }}>
+                    <Box sx={{
+                         borderTop: '1px solid'
+                    }}>
+                        <Typography
+                            sx={{
+                                fontSize: '16px',
+                                lineHeight: '28px'
+                            }}
+                        >Güncellenme Tarihi</Typography>
+                        <Typography 
+                            sx={{
+                                fontSize: '16px',
+                                fontWeight: 700,
+                                lineHeight: '28px'
+                            }}
+                        >{bottomText}</Typography>
+                    </Box>
+                </CardActions>
+            )}
         </Card>
     )
 

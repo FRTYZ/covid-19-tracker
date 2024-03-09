@@ -14,5 +14,6 @@ export type CardSectionProp = {
     title?: string, 
     value?: number | string,
     status?: string,
-    color?: string
+    color?: string,
+    bottomText?: string
 }
