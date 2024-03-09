@@ -76,7 +76,8 @@ const CardSection: React.FC<CardSectionProp> = ({ title, value, status, color, b
                         <Typography
                             sx={{
                                 fontSize: '16px',
-                                lineHeight: '28px'
+                                lineHeight: '28px',
+                                marginTop: '10px'
                             }}
                         >Güncellenme Tarihi</Typography>
                         <Typography 
