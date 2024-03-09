@@ -9,7 +9,7 @@ function* fetchCovidDataSaga(action: any): Generator<any, void, any> {
     const country = action.payload.country; 
     const data = yield call(Request, {
       method: 'GET',
-      url: `/statistics?=${country}`,
+      url: `/statistics?country=${country}`,
     });
 
     yield put(fetchCovidDataSuccess(data)); // Veri başarılı şekilde alındığında bir action dispatch edicek
