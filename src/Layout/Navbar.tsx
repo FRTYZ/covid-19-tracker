@@ -1,3 +1,5 @@
+import React, {useState, useEffect} from "react";
+
 // Material UI elements
 import { 
     Grid, 
@@ -18,12 +20,43 @@ import { navbarStyles } from '../styles';
 import LogoImage from '../assets/logo.png'
 
 // Router
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { getCountries } from "../redux/actions";
 
 const Navbar = () => {
+    // Router
+    const navigate = useNavigate()
 
     // Material UI and react router
     const theme = useTheme();
+
+    // Redux
+    const dispatch = useDispatch();
+    const countriesFromApi = useSelector((state: any) => state.countries);
+
+    // useState
+    const [countries, setCountries] = useState<string[]>([''])
+
+    useEffect(() => {
+        if(!countriesFromApi?.response){
+            dispatch(getCountries()); 
+        }
+    }, [])
+
+    useEffect(() => {
+        if(countriesFromApi?.response){
+            setCountries(countriesFromApi.response)
+        }
+    }, [countriesFromApi.response])
+
+    // Functionst
+    const handleSelectCountry = (value: string) =>  {
+        const selectCountry = value.toLocaleLowerCase();
+        navigate('/detail/' + selectCountry)
+    }   
 
     return (
         <AppBar position="sticky" sx={navbarStyles.appBar}>
@@ -48,10 +81,13 @@ const Navbar = () => {
                                     <TextField
                                         select
                                         fullWidth
-                                        size='small'                   
+                                        size='small'
+                                        onChange={(e) => handleSelectCountry(e.target.value)}
+                                        label="Ülke seçebilirsiniz"               
                                     >
-                                        <MenuItem value="0">Seç</MenuItem>
-                                    
+                                        {countries.length > 0 && countries.map((item, key) => (
+                                            <MenuItem value={item} key={key}>{item}</MenuItem>
+                                        ))}
                                     </TextField>
                                 </Box>
                             </Grid>
