@@ -153,7 +153,7 @@ const Detail = () => {
                 {/* Country info and last update section */}
                 <Grid container>
                     <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-                        <Box sx={{ marginTop: 4 }}>
+                        <Box sx={{ marginTop: 2.8 }}>
                             <CardSection 
                                 title='Ülke'
                                 value={values?.country ? values.country : 'Şuanlık veri alınamadı, farklı ülke seçebilirsiniz.' }

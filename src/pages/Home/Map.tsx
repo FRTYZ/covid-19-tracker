@@ -5,7 +5,12 @@ import
 } from 'react'
 
 // Material UI elements
-import { Grid, Box } from '@mui/material';
+import { 
+  Grid,
+   Box,
+   useMediaQuery,
+   useTheme
+} from '@mui/material';
 
 // Router
 import { useNavigate } from 'react-router-dom';
@@ -58,6 +63,11 @@ function Map() {
       }
   }
 
+  const theme = useTheme();
+
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm')); // 'sm' ve altı mobil olarak kabul edilir.
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'lg')); // 'sm' ve 'md' arasındaysa tablet olarak kabul edilir.
+  const isDesktop = useMediaQuery(theme.breakpoints.up('lg')); // 'md' ve üzeri masaüstü olarak kabul edilir.
 
   return (
     <React.Fragment>
@@ -73,7 +83,7 @@ function Map() {
                 color="white"
                 value-suffix="people"
                 backgroundColor="lightblue"
-                size="xxl"
+                size={isDesktop ? 'xxl' : isTablet ? 'xl' : isMobile ? 'md' : 'sm'}
                 data={data}
               />
           </Box>
