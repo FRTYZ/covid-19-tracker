@@ -7,9 +7,6 @@ import
 // Material UI elements
 import { Grid, Box } from '@mui/material';
 
-// Components
-import { SnackbarAlert } from '../../components/SnackbarAlert';
-
 // Router
 import { useNavigate } from 'react-router-dom';
 
