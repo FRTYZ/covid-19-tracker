@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 // Pages
 
 import Map from "../pages/Home/Map";
-import Detail from "../pages/Home/Detail";
+import Detail from "../pages/Detail/Detail";
 
 const publicRoutes = [
     { path: "/", component: <Map /> },
