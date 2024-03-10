@@ -1,13 +1,10 @@
-import 
-    React,
-    {
-        useEffect, 
-        useState
-    } 
-from 'react'
+import React, { useEffect, useState} from 'react'
 
 // Material UI elements
 import { Grid, Box, Typography } from '@mui/material';
+
+// Styles
+import { detailPageStyles } from '../../styles';
 
 // Components
 import CardSection from '../../components/CardSection';
@@ -231,14 +228,7 @@ const Detail = () => {
                             <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
                             {pieChartData.length > 0 ? (
                                 <>
-                                    <Box 
-                                        sx={{ 
-                                            display: 'flex',
-                                            justifyContent: 'center', 
-                                            textAlign: 'center', 
-                                            marginTop: 5
-                                        }}
-                                    >
+                                    <Box sx={detailPageStyles.pieChartBox}>
                                         <PieChart width={400} height={220}>
                                             <Pie
                                                 data={pieChartData}
@@ -256,7 +246,7 @@ const Detail = () => {
                                             <Tooltip />
                                         </PieChart>
                                     </Box>
-                                    <Typography sx={{  textAlign: 'center', fontSize: '16px', fontWeight: 600 }}> Vefat eden / İyileşenler istatistik grafiği </Typography>
+                                    <Typography sx={detailPageStyles.chartsTitle}> Vefat eden / İyileşenler istatistik grafiği </Typography>
                                 </>
                             ): (
                                 <ChartLoader variant='circular' />
@@ -279,7 +269,7 @@ const Detail = () => {
                                                 <Bar dataKey="value" fill="#FF8042"/>
                                             </BarChart>
                                         </Box>
-                                        <Typography sx={{ textAlign: 'center', fontSize: '16px', fontWeight: 600 }}> Nufüs / Test olanlar istatistik grafiği </Typography>
+                                        <Typography sx={detailPageStyles.chartsTitle}> Nufüs / Test olanlar istatistik grafiği </Typography>
                                     </>
                                 ): (
                                     <ChartLoader variant='rounded' />

@@ -84,3 +84,18 @@ export const cardSectionStyles: Record<string, SxProps<Theme> | undefined> = {
         lineHeight: '28px'
     }
 }
+
+// pages/Home/Detail.tsx
+export const detailPageStyles: Record<string, SxProps<Theme> | undefined> = {
+    pieChartBox: {
+        display: 'flex',
+        justifyContent: 'center', 
+        textAlign: 'center', 
+        marginTop: 5
+    },
+    chartsTitle: {
+        textAlign: 'center', 
+        fontSize: '16px', 
+        fontWeight: 600
+    }
+}
