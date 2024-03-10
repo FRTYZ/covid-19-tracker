@@ -50,13 +50,13 @@ export const cardSectionStyles: Record<string, SxProps<Theme> | undefined> = {
         borderRadius: '25px',
     },
     cardContentTitle: {
-        fontSize: '20px',
+        fontSize: 'clamp(15px, 4vw, 20px)',
         fontWeight: 700,
         lineHeight: '34px',
         color: '#1A1053',
     },
     cardMiddleContent: {
-        fontSize: '35px',
+        fontSize: 'clamp(20px, 4vw, 32px)',
         fontWeight: 700,
         lineHeight: '59px',
         margin: '8px 0px 8px 0px'
