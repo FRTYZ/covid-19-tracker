@@ -18,7 +18,7 @@ function* fetchCovidDataSaga(action: any): Generator<any, void, any> {
   }
 }
 
-function* getCountriesSaga(): Generator<any, void, any> {
+export function* getCountriesSaga(): Generator<any, void, any> {
   try {
     // Request yardımcı fonksiyonunu kullanarak API isteğini gerçekleştirin
     const data = yield call(Request, {
