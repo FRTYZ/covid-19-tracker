@@ -83,7 +83,8 @@ const Navbar = () => {
                                         fullWidth
                                         size='small'
                                         onChange={(e) => handleSelectCountry(e.target.value)}
-                                        label="Ülke seçebilirsiniz"               
+                                        label="Ülke seçebilirsiniz"  
+                                        placeholder="Ülke seçebilirsiniz"             
                                     >
                                         {countries.length > 0 && countries.map((item, key) => (
                                             <MenuItem value={item} key={key}>{item}</MenuItem>
