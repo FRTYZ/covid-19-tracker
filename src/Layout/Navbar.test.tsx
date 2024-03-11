@@ -1,17 +1,23 @@
+// Test Npm packages
 import { call, put } from 'redux-saga/effects';
-import { getCountriesSaga } from '../redux/sagas';
-import { getCountriesSuccess, getCountriesFailure, GET_COUNTRIES_SUCCESS } from '../redux/actions';
-import { Request } from '../helpers/Request'; // API çağrısını gerçekleştiren yardımcı fonksiyonu içeri aktarın
-import Navbar from './Navbar';
-import { render, fireEvent } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from '../redux/store';
-
 import '@testing-library/jest-dom'
-
-
 const { expect, describe, it } = require('@jest/globals');
+
+// React Router
+import { render, fireEvent, screen } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+// Redux
+import { getCountriesSaga } from '../redux/sagas';
+import { getCountriesSuccess, getCountriesFailure } from '../redux/actions';
+import store from '../redux/store';
+import { Provider } from 'react-redux';
+
+// Helpers
+import { Request } from '../helpers/Request'; // API çağrısını gerçekleştiren yardımcı fonksiyonu içeri aktarın
+
+// Component
+import Navbar from './Navbar';
 
 describe('getCountriesSaga', () => {
   test('countries verisinin başarılı bir şekilde alındığı', () => {
@@ -35,15 +41,15 @@ describe('getCountriesSaga', () => {
 
 describe('Navbar Component', () => {
     test('Select\'in render edilip edilmediğini kontrol etme', () => {
-        const { getByPlaceholderText } = render(
+        render(
             <Router>
                 <Provider store={store}>
-                <Navbar />
+                    <Navbar />
                 </Provider>
             </Router>
         );
     
-        expect(getByPlaceholderText("Ülke seçebilirsiniz")).toBeInTheDocument();
+        expect(screen.getByPlaceholderText('Ülke seçebilirsiniz')).toBeInTheDocument();
   
     });
     test('setCountries useState boş olup olmadığını kontrol etme', () => {
@@ -58,11 +64,27 @@ describe('Navbar Component', () => {
         const selectElement = getByPlaceholderText('Ülke seçebilirsiniz') as HTMLSelectElement;
         expect(selectElement).toBeInTheDocument();
 
-    
         // Select elementine bir değer seçin
         fireEvent.change(selectElement, { target: { value: 'Turkey' } });
     
         // setCountries state'inin güncellendiğini ve dolu olduğunu kontrol edin
         expect(selectElement.value).toBe('Turkey');
     });
-  });
+    test('Select\'in seçilip seçilmediğini kontrol etme', () => {
+        const { getByPlaceholderText } = render(
+            <Router>
+                <Provider store={store}>
+                    <Navbar />
+                </Provider>
+            </Router>
+        );
+        
+        const selectElement = getByPlaceholderText('Ülke seçebilirsiniz') as HTMLSelectElement;
+        expect(selectElement).toBeInTheDocument();
+
+        // Select elementine bir değer seçin
+        fireEvent.change(selectElement, { target: { value: 'Turkey' } });
+
+        expect(selectElement).toHaveValue('Turkey');
+    });
+});
