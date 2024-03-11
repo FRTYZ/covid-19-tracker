@@ -46,4 +46,23 @@ describe('Navbar Component', () => {
         expect(getByPlaceholderText("Ülke seçebilirsiniz")).toBeInTheDocument();
   
     });
+    test('setCountries useState boş olup olmadığını kontrol etme', () => {
+        const { getByPlaceholderText } = render(
+            <Router>
+                <Provider store={store}>
+                <Navbar />
+                </Provider>
+            </Router>
+        );
+        
+        const selectElement = getByPlaceholderText('Ülke seçebilirsiniz') as HTMLSelectElement;
+        expect(selectElement).toBeInTheDocument();
+
+    
+        // Select elementine bir değer seçin
+        fireEvent.change(selectElement, { target: { value: 'Turkey' } });
+    
+        // setCountries state'inin güncellendiğini ve dolu olduğunu kontrol edin
+        expect(selectElement.value).toBe('Turkey');
+    });
   });
