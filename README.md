@@ -1,30 +1,136 @@
-# React + TypeScript + Vite
+# Covid 19 Tracker - Case Study
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Merhaba,
+Ben Fırat YILDIZ,
+Case Study görevini mailde istenilen şekilde tamamlanmıştır.
 
-Currently, two official plugins are available:
+Projede kullanılan teknolojiler
+* React
+* Typescript
+* Redux & Redux Saga
+* Material UI
+* Unit testler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/home.png?token=GHSAT0AAAAAACNGC4TZ4WI754MDXY2LDMSEZPQV4RA)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Canlı Demo (Vercel)
 
-- Configure the top-level `parserOptions` property like this:
+https://covid-19-tracker-lovat.vercel.app/
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Proje nasıl kurulur (Git ile)
+
+* #### Terminali açıp bu komutu kullanabilirsiniz
+
+```
+(HTTPS)
+
+git clone https://github.com/FRTYZ/covid-19-tracker.git
+
+(SSH)
+
+git clone git@github.com:FRTYZ/covid-19-tracker.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+* #### Projeyi localinize klonladıktan sonra projenin dizininden terminali açıp sırasıyla bu komutları kullanabilirisiniz
+
+```
+npm install
+```
+```
+npm run dev
+```
+
+## Proje nasıl kurulur (Dowload)
+
+* #### Seçeneklerden "Dowload Zip" ile indiriniz.
+
+![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/git-clone.png?token=GHSAT0AAAAAACNGC4TZ4WI754MDXY2LDMSEZPQV4RA)
+
+* #### Zip formatında indirdiğiniz projeyi localnizde extract ediniz.
+
+![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/extract-zip.png?token=GHSAT0AAAAAACNGC4TZ4WI754MDXY2LDMSEZPQV4RA)
+
+* #### Projeyi extract ettikten sonra projeyi kendi dizininden terminalini açıp sırasıyla bu komutları kullanabilirisiniz
+
+```
+npm install
+```
+```
+npm run dev
+```
+
+## Projenin ekran görüntüleri
+
+* ### Map sayfası
+
+![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/home.png?token=GHSAT0AAAAAACNGC4TZV2QJXRNQTLWQE3CAZPQWH5Q)
+
+* ### Navbar (Haritadan seçmek yerine select inputuyla dilediğiniz ülkeyi seçebilirsiniz)
+
+![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/select.png?token=GHSAT0AAAAAACNGC4TZSCUNB742JHDBO5KMZPQWI7Q)
+
+* ### Detay sayfası (Haritadan veya select inputla seçilen ülkenin covid 19 verileri listelenir)
+
+![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/detail.png?token=GHSAT0AAAAAACNGC4TY3WU43NPLCGRBWKNQZPQWKGQ)
+
+* ### Loader (API sorun oluştuğunda kullanıcının bilgilendirilmesi)
+![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/loader.png?token=GHSAT0AAAAAACNGC4TY3WU43NPLCGRBWKNQZPQWKGQ)
+
+
+### Package.json
+```
+{
+  "name": "covid-19-tracker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/roboto": "^5.0.12",
+    "@jest/types": "^29.6.3",
+    "@mui/icons-material": "^5.15.12",
+    "@mui/material": "^5.15.12",
+    "@reduxjs/toolkit": "^2.2.1",
+    "@testing-library/jest-dom": "^6.4.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.2",
+    "react-slugify": "^3.0.3",
+    "react-svg-worldmap": "^2.0.0-alpha.16",
+    "recharts": "^2.12.2",
+    "redux-saga": "^1.3.0",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@types/redux-mock-store": "^1.0.6",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "redux-mock-store": "^1.5.4",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4"
+  }
+}
+```
