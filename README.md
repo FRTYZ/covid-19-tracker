@@ -44,8 +44,8 @@ npm install
 npm run dev
 ```
 ## Proje nasıl kurulur (Docker ile)
-
-* ### locale image oluşturup ve başlatmak için
+* #### Projenin olduğu dizinde terminali açınız.
+* #### locale image oluşturup ve başlatmak için
 ```
 docker-compose up --build --no-recreate -d
 ```
@@ -53,20 +53,20 @@ docker-compose up --build --no-recreate -d
 docker-compose up -d
 ```
 
-* ### Container test etmek için
+* #### Container test etmek için
 ```
 docker-compose ps
 ```
 
-### komutlar böyle görünmekte
+#### komutlar böyle görünmekte
 ![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/1-docker-compose.png?raw=true)
 
-* ### Container çalıştırmak için
+* #### Container çalıştırmak için
 
 ```
 docker exec -it covid19-tracker sh
 ```
-* ### Container çalıştırdık şimdide node paketlerini yükleyip başlatmak için
+* #### Container çalıştırdık şimdide node paketlerini yükleyip başlatmak için
 
 ```
 npm i && npm run dev
