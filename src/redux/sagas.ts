@@ -4,7 +4,7 @@ import { FETCH_COVID_DATA, fetchCovidDataSuccess, fetchCovidDataFailure,GET_COUN
 // Helpers
 import { Request } from '../helpers/Request';
 
-function* fetchCovidDataSaga(action: any): Generator<any, void, any> {
+export function* fetchCovidDataSaga(action: any): Generator<any, void, any> {
   try {
     const country = action.payload.country; 
     const data = yield call(Request, {

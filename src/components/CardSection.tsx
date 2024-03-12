@@ -23,6 +23,7 @@ const CardSection: React.FC<CardSectionProp> = ({ title, value, status, color, b
     return (
         <Card 
             variant="outlined" 
+            id={title}
             sx={{
                 ':hover': {
                     outline: '2px solid' + theme.palette.warning.main
