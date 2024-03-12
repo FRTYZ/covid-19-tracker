@@ -9,8 +9,6 @@ Projede kullanılan teknolojiler
 * Typescript
 * Redux & Redux Saga
 * Material UI
-* Unit testler
-
 
 ![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/home.png?raw=true)
 
@@ -44,7 +42,7 @@ npm install
 npm run dev
 ```
 ## Proje nasıl kurulur (Docker ile)
-* #### Projenin olduğu dizinde terminali açınız.
+* #### Projenin olduğu dizinde terminalinizi açınız.
 * #### locale image oluşturup ve başlatmak için
 ```
 docker-compose up --build --no-recreate -d
@@ -72,10 +70,10 @@ docker exec -it covid19-tracker sh
 npm i && npm run dev
 ```
 
-### komutlar böyle görünmekte
+#### komutlar böyle görünmekte
 ![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/2-docker-start.png?raw=true)
 
-### terminalde yazan adresle projeye erişebilirsiniz.
+#### terminalde yazan adresle projeye erişebilirsiniz.
 
 
 ## Proje nasıl kurulur (Dowload)
@@ -88,7 +86,7 @@ npm i && npm run dev
 
 ![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/extract-zip.png?raw=true)
 
-* #### Projeyi extract ettikten sonra projeyi kendi dizininden terminalini açıp sırasıyla bu komutları kullanabilirisiniz
+* #### Projeyi extract ettikten sonra projeyi kendi dizininden terminalinizi açıp sırasıyla bu komutları kullanabilirisiniz
 
 ```
 npm install
