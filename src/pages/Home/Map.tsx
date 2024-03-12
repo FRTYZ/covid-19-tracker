@@ -74,10 +74,14 @@ function Map() {
       <Grid container>
          {/* Map section */}
         <Grid item xl={12} lg={12} md={12} sm={12} xs={12}>
-          <Box>
+          <Box
+            data-testid="selected-country"
+            id="Map"
+          >
               <WorldMap
                 onClickFunction={(countryName) => {
                   setSelectCountry(countryName?.countryName)
+                  console.log(countryName)
                 }}
                 styleFunction={stylingFunction}
                 color="white"
