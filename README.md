@@ -12,11 +12,14 @@ Projede kullanılan teknolojiler
 * Unit testler
 
 
-![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/home.png?token=GHSAT0AAAAAACNGC4TZ4WI754MDXY2LDMSEZPQV4RA)
+![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/home.png?raw=true)
 
 ## Canlı Demo (Vercel)
 
 https://covid-19-tracker-lovat.vercel.app/
+
+## Proje kurulumu için gereklilikler
+* NodeJS (version minimum v20.10.0)
 
 ## Proje nasıl kurulur (Git ile)
 
