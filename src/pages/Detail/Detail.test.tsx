@@ -1,5 +1,4 @@
 // Test Npm packages
-import { call, put } from 'redux-saga/effects';
 const { expect, describe, it } = require('@jest/globals');
 
 import { render } from '@testing-library/react';
@@ -14,13 +13,14 @@ import { fetchCovidDataSaga } from '../../redux/sagas';
 import { fetchCovidDataSuccess, fetchCovidData, fetchCovidDataFailure } from '../../redux/actions';
 import store from '../../redux/store';
 import { Provider } from 'react-redux';
+import { call, put } from 'redux-saga/effects';
 
 // Helpers
 import { Request } from '../../helpers/Request'; // API çağrısını gerçekleştiren yardımcı fonksiyonu içeri aktarın
 
 import Detail from './Detail';
 
-describe('Detail Component', () => {
+describe('Detail page', () => {
     it('Detail sayfasının render olup olmadığı', () => {
           render(
             <Router>
@@ -43,8 +43,8 @@ describe('Detail Component', () => {
           </Provider>
         );
         
-        const eleemnt = container.querySelector('#Ülke')
-        expect(eleemnt).toBeInTheDocument();
+        const element = container.querySelector('#Ülke')
+        expect(element).toBeInTheDocument();
     });
 });
 
