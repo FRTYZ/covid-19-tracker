@@ -82,7 +82,7 @@ npm i && npm run dev
 
 * #### Seçeneklerden "Dowload Zip" ile indiriniz.
 
-![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/home.png?raw=true)
+![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/download.png?raw=true)
 
 * #### Zip formatında indirdiğiniz projeyi localnizde extract ediniz.
 
