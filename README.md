@@ -45,11 +45,11 @@ npm run dev
 
 * #### Seçeneklerden "Dowload Zip" ile indiriniz.
 
-![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/git-clone.png?token=GHSAT0AAAAAACNGC4TZ4WI754MDXY2LDMSEZPQV4RA)
+![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/home.png?raw=true)
 
 * #### Zip formatında indirdiğiniz projeyi localnizde extract ediniz.
 
-![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/extract-zip.png?token=GHSAT0AAAAAACNGC4TZ4WI754MDXY2LDMSEZPQV4RA)
+![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/extract-zip.png?raw=true)
 
 * #### Projeyi extract ettikten sonra projeyi kendi dizininden terminalini açıp sırasıyla bu komutları kullanabilirisiniz
 
@@ -64,18 +64,18 @@ npm run dev
 
 * ### Map sayfası
 
-![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/home.png?token=GHSAT0AAAAAACNGC4TZV2QJXRNQTLWQE3CAZPQWH5Q)
+![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/home.png?raw=true)
 
 * ### Navbar (Haritadan seçmek yerine select inputuyla dilediğiniz ülkeyi seçebilirsiniz)
 
-![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/select.png?token=GHSAT0AAAAAACNGC4TZSCUNB742JHDBO5KMZPQWI7Q)
+![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/select.png?raw=true)
 
 * ### Detay sayfası (Haritadan veya select inputla seçilen ülkenin covid 19 verileri listelenir)
 
-![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/detail.png?token=GHSAT0AAAAAACNGC4TY3WU43NPLCGRBWKNQZPQWKGQ)
+![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/detail.png?raw=true)
 
 * ### Loader (API sorun oluştuğunda kullanıcının bilgilendirilmesi)
-![alt text](https://raw.githubusercontent.com/FRTYZ/covid-19-tracker/main/public/loader.png?token=GHSAT0AAAAAACNGC4TY3WU43NPLCGRBWKNQZPQWKGQ)
+![alt text](https://github.com/FRTYZ/covid-19-tracker/blob/main/public/loader.png?raw=true)
 
 
 ### Package.json
