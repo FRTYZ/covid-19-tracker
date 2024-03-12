@@ -1,5 +1,3 @@
-// reducers.ts
-
 import { combineReducers } from 'redux';
 import { FETCH_COVID_DATA_SUCCESS, FETCH_COVID_DATA_FAILURE, RESET_STATE, GET_COUNTRIES_SUCCESS, GET_COUNTRIES_FAILURE } from './actions';
 
