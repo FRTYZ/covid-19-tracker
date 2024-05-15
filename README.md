@@ -2,7 +2,6 @@
 
 Merhaba,
 Ben Fırat YILDIZ,
-Case Study görevini mailde istenilen şekilde tamamlanmıştır.
 
 Projede kullanılan teknolojiler
 * React
