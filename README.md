@@ -1,4 +1,4 @@
-# Covid 19 Tracker - Case Study
+# Covid 19 Tracker - Covid 19 Takip
 
 Merhaba,
 Ben Fırat YILDIZ,
